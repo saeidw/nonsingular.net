@@ -1,0 +1,17 @@
+---
+title: Hey there!
+author: Saeid
+---
+
+I finally got around to actually putting something up here!
+The site is stitched together out of Haskell, HTML and Markdown.
+I tried to keep everything clean and semantic, you will notice that most
+pages do not have file extensions. Instead, Apache does some smart content
+negotiation to figure out which files to serve you.
+
+I am pretty bad at design, so for now I will just stick with the CSS style
+I put together from [Skeleton](http://www.getskeleton.com). I used a fluid
+layout in the hopes that the content will still be readable on smaller
+screen sizes. Let me know if you have problems getting to any content
+on the site.
+
