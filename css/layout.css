@@ -254,8 +254,9 @@ header {
     margin-left: 0px;
     margin-right: 10px;
     font-size: 17px;
+    min-height: 500px;
     width: 73%;
-    float: right;
+    float: left;
 }
 
 nav {
@@ -271,9 +272,10 @@ footer {
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
-    width: 73%;
-    float: right;
+    width: 96%;
+    float: left;
     clear: both;
+    border-top: 1px dashed;
 }
 
 nav ul {
@@ -283,5 +285,15 @@ nav ul {
 
 nav a {
     font-size: 17px;
+}
+
+span.post-date, div.info {
+    font-size: 15px;
+    color: #777;
+    font-style: italic;
+}
+
+div.info {
+    margin-bottom: 10px;
 }
 
