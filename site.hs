@@ -18,7 +18,7 @@ import           Control.Monad      (msum)
 
 main :: IO ()
 main = hakyll $ do
-    match "images/*" $ do
+    match "img/*" $ do
         route   idRoute
         compile copyFileCompiler
 
@@ -39,7 +39,7 @@ main = hakyll $ do
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= saveSnapshot "content"
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
+            >>= loadAndApplyTemplate "templates/post-boilerplate.html" postCtx
             >>= relativizeUrls
             >>= cleanHtmlUrls
 
@@ -89,7 +89,8 @@ main = hakyll $ do
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
-    dateField "date" "%B %e, %Y" `mappend`
+    dateField "date" "%B %e, %Y"        `mappend`
+    dateField "timestamp" "%FT%T%QZ"    `mappend`
     defaultContext
 
 routeByDate :: Metadata -> Routes

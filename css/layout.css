@@ -264,8 +264,17 @@ nav {
     margin-left: 10px;
     margin-right: 10px;
     width: 23%;
-    float: left;
     text-align: center;
+    float: left;
+}
+
+#profile {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 23%;
+    text-align: center;
+    float: right;
 }
 
 footer {
@@ -297,3 +306,8 @@ div.info {
     margin-bottom: 10px;
 }
 
+/*
+#profile-photo {
+    float: left;
+}
+*/
