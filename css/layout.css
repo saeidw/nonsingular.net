@@ -1,3 +1,7 @@
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -18,296 +22,92 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
-
+/* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
-
 body {
     line-height: 1;
 }
-
 ol, ul {
     list-style: none;
 }
-
 blockquote, q {
     quotes: none;
 }
-
 blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
     content: none;
 }
-
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+/* End Reset */
 
 body {
-    background: #fff;
-    font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #444;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: #181818;
-    font-family: "Georgia", "Times New Roman", serif;
-    font-weight: normal;
-}
-
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-    font-weight: inherit;
+.group:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 h1 {
-    font-size: 46px;
-    line-height: 50px;
-    margin-bottom: 14px;
+    font-size: 36pt;
 }
 
 h2 {
-    font-size: 35px;
-    line-height: 40px;
-    margin-bottom: 10px;
+    font-size: 24pt;
 }
 
 h3 {
-    font-size: 28px;
-    line-height: 34px;
-    margin-bottom: 8px;
+    font-size: 18pt;
 }
 
-h4 {
-    font-size: 21px;
-    line-height: 30px;
-    margin-bottom: 4px;
-}
-
-h5 {
-    font-size: 17px;
-    line-height: 24px;
-}
-
-h6 {
-    font-size: 14px;
-    line-height: 21px;
-}
-
-.subheader {
-    color: #777;
-}
-
-p {
-    margin: 0 0 20px 0;
-}
-
-p img {
-    margin: 0;
-}
-
-p.lead {
-    font-size: 21px;
-    line-height: 27px;
-    color: #777;
-}
-
-em {
-    font-style: italic;
-}
-
-strong {
-    font-weight: bold;
-    color: #333;
-}
-
-small {
-    font-size: 80%;
-}
-
-blockquote, blockquote p {
-    font-size: 17px;
-    line-height: 24px;
-    color: #777;
-    font-style: italic;
-}
-
-blockquote {
-    margin: 0 0 20px;
-    padding: 9px 20px 0 19px;
-    border-left: 1px solid #ddd;
-}
-
-blockquote cite {
-    display: block;
-    font-size: 12px;
-    color: #555;
-}
-
-blockquote cite:before {
-    content: "\2014 \0020";
-}
-
-blockquote cite a,
-blockquote cite a:visited,
-blockquote cite a:visited {
-    color: #555;
-}
-
-hr {
-    border: solid #ddd;
-    border-width: 1px 0 0;
-    clear: both;
-    margin: 10px 0 30px;
-    height: 0;
-}
-
-a, a:visited {
-    color: #333;
-    text-decoration: underline;
-    outline: 0;
-}
-
-a:hover, a:focus {
-    color: #000;
-}
-
-p a, p a:visited {
-    line-height: inherit;
-}
-
-ul, ol {
-    margin-bottom: 20px;
-}
-
-ul {
-    list-style: none outside;
-}
-
-ol {
-    list-style: decimal;
-}
-
-ol, ul.square, ul.circle, ul.disc {
-    margin-left: 30px;
-}
-
-ul.square {
-    list-style: square outside;
-}
-
-ul.circle {
-    list-style: circle outside;
-}
-
-ul.disc {
-    list-style: disc outside;
-}
-
-ul ul, ul ol,
-ol ol, ol ul {
-    margin: 4px 0 5px 30px;
-    font-size: 90%;
-}
-
-ul ul li, ul ol li,
-ol ol li, ol ul li {
-    margin-bottom: 6px;
-}
-
-li {
-    line-height: 18px;
-    margin-bottom: 12px;
-}
-
-ul.large li {
-    line-height: 21px;
-}
-
-li p {
-    line-height: 21px;
+.column {
+    display: inline-block;
+    vertical-align: top;
 }
 
 #wrapper {
-    margin-left: auto;
-    margin-right: auto;
-    width: 96%;
+    width: 90%;
+    margin: 20px auto;
 }
 
 header {
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 96%;
-    border-left: 0px;
-    border-right: 0px;
-    border-top: 0px;
-    border-bottom: 1px dashed;
-}
-
-#content {
-    margin-top: 10px;
-    margin-left: 0px;
-    margin-right: 10px;
-    font-size: 17px;
-    min-height: 500px;
-    width: 73%;
-    float: left;
-}
-
-nav {
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 23%;
-    text-align: center;
-    float: left;
-}
-
-#profile {
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 23%;
-    text-align: center;
-    float: right;
-}
-
-footer {
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 96%;
-    float: left;
-    clear: both;
-    border-top: 1px dashed;
-}
-
-nav ul {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-nav a {
-    font-size: 17px;
-}
-
-span.post-date, div.info {
-    font-size: 15px;
-    color: #777;
-    font-style: italic;
-}
-
-div.info {
     margin-bottom: 10px;
 }
 
-/*
-#profile-photo {
-    float: left;
+#navigation ul.navigation-links {
+    margin-top: 5px;
 }
-*/
+
+#navigation ul.navigation-links li {
+    padding-top: 5px;
+}
+
+@media screen and (min-width:600px) {
+    #navigation {
+        width: 20%;
+    }
+
+    #content {
+        width: 60%;
+    }
+
+    #profile-content {
+        width: 15%;
+    }
+}
+
+@media screen and (max-width:599px) {
+    #navigation li {
+        display: inline;
+    }
+}
+
