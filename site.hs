@@ -5,12 +5,12 @@ import           Hakyll
 --------------------------------------------------------------------------------
 
 import           System.FilePath    (takeFileName)
-import           System.Locale      (TimeLocale, defaultTimeLocale)
 
 import qualified Data.Map           as M
 import           Data.List          (intercalate, isSuffixOf)
 import           Data.Time.Clock    (UTCTime (..))
-import           Data.Time.Format   (formatTime, parseTime)
+import           Data.Time.Format   (TimeLocale, defaultTimeLocale,
+                                     formatTime, parseTimeM)
 
 import           Control.Monad      (msum)
 
@@ -120,7 +120,7 @@ getItemUTC' locale path metadata = do
         [tryField "date"      fmt | fmt <- formats] ++
         [parseTime' "%Y-%m-%d" $ intercalate "-" $ take 3 $ splitAll "-" fn]
   where
-    parseTime' = parseTime locale
+    parseTime' = parseTimeM True locale
     formats    =
         [ "%a, %d %b %Y %H:%M:%S %Z"
         , "%Y-%m-%dT%H:%M:%S%Z"
