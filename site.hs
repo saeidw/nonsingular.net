@@ -98,14 +98,14 @@ routeByDate metadata = customRoute $ \id' ->
     let path        = toFilePath id'
 
         fileName    = intercalate "-" $ drop 3 $ splitAll "-"
-                    $ takeFileName $ path
+                    $ takeFileName path
 
         locale      = defaultTimeLocale
-        datePath d  = formatTime locale "%Y/%m/%d" d
+        datePath    = formatTime locale "%Y/%m/%d"
 
-    in case (getItemUTC' locale path metadata) of
+    in case getItemUTC' locale path metadata of
         Nothing     -> path
-        Just date   -> "posts/" ++ (datePath date) ++ "/" ++ fileName
+        Just date   -> "posts/" ++ datePath date ++ "/" ++ fileName
 
 getItemUTC' :: TimeLocale       -- ^ Output time locale
            -> FilePath
@@ -113,7 +113,7 @@ getItemUTC' :: TimeLocale       -- ^ Output time locale
            -> Maybe UTCTime     -- ^ Parsed UTCTime
 getItemUTC' locale path metadata = do
     let tryField k fmt = M.lookup k metadata >>= parseTime' fmt
-        fn             = takeFileName $ path
+        fn             = takeFileName path
 
     msum $
         [tryField "published" fmt | fmt <- formats] ++
@@ -145,7 +145,7 @@ cleanHtmlUrls item = return $ fmap (withUrls clean) item
       | otherwise = url
 
 feedConfig :: FeedConfiguration
-feedConfig = FeedConfiguration 
+feedConfig = FeedConfiguration
     { feedTitle = "nonsingular"
     , feedDescription = "a blog by Saeid Al-Wazzan"
     , feedAuthorName = "Saeid Al-Wazzan"
