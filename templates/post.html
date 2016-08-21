@@ -1,13 +1,13 @@
 <article class="h-entry">
-<h1 class="p-name">$title$</h1>
-<div class="info">
-    Posted on <time class="dt-published" datetime="$timestamp$">$date$</time>
-    $if(author)$
+    <h1 class="p-name">$title$</h1>
+    <div class="info">
+        Posted on <time class="dt-published" datetime="$timestamp$">$date$</time>
+        $if(author)$
         by <a class="p-author h-card" href="http://nonsingular.net">$author$</a>
-    $endif$
-</div>
+        $endif$
+    </div>
 
-<div class="e-content">
-    $body$
-</div>
+    <div class="post-body e-content">
+        $body$
+    </div>
 </article>
