@@ -469,7 +469,8 @@ h1, h2, h3, h4, h5, h6, .title {
 
 #content {
     float: left;
-    width: 80%;
+    width: 75%;
+    margin-right: 5%;
 }
 
 ul.navigation-links {
