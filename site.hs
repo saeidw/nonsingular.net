@@ -18,7 +18,7 @@ import           Control.Monad      (msum)
 
 main :: IO ()
 main = hakyll $ do
-    match "img/*" $ do
+    match ("img/*" .||. "fonts/*") $ do
         route   idRoute
         compile copyFileCompiler
 
@@ -31,7 +31,6 @@ main = hakyll $ do
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
-            >>= cleanHtmlUrls
 
     match "posts/*" $ do
         route $ metadataRoute routeByDate   `composeRoutes`
@@ -41,7 +40,6 @@ main = hakyll $ do
             >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "templates/post-boilerplate.html" postCtx
             >>= relativizeUrls
-            >>= cleanHtmlUrls
 
     create ["archive.html"] $ do
         route idRoute
@@ -56,7 +54,6 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
                 >>= loadAndApplyTemplate "templates/default.html" archiveCtx
                 >>= relativizeUrls
-                >>= cleanHtmlUrls
 
     create ["atom.xml"] $ do
         route idRoute
@@ -75,14 +72,13 @@ main = hakyll $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let indexCtx =
                     listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Home"                `mappend`
+                    constField "title" "Welcome"                `mappend`
                     defaultContext
 
             getResourceBody
                 >>= applyAsTemplate indexCtx
                 >>= loadAndApplyTemplate "templates/index.html" indexCtx
                 >>= relativizeUrls
-                >>= cleanHtmlUrls
 
     match "templates/*" $ compile templateCompiler
 
