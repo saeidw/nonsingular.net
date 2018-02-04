@@ -3,16 +3,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>nonsingular - $title$</title>
-        <link rel="stylesheet" type="text/css" href="/css/layout.css" />
         <link rel="alternate" type="application/atom+xml" href="/atom.xml" />
+        <link rel="stylesheet" type="text/css" href="/css/layout.css" />
     </head>
     <body>
-    <div id="wrapper">
+    <header id="site-header">
+        <h1 id="site-title"><a href="/">nonsingular</a></h1>
         $partial("templates/navigation.html")$
-        <div id="content">
-            <div id="body-content">$body$</div>
-            $partial("templates/footer.html")$
-        </div>
-    </div>
+    </header>
+    <section id="container">
+        <div id="body-content">$body$</div>
+        $partial("templates/footer.html")$
+    </section>
     </body>
 </html>
