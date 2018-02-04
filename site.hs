@@ -108,7 +108,7 @@ getItemUTC' :: TimeLocale       -- ^ Output time locale
            -> Metadata
            -> Maybe UTCTime     -- ^ Parsed UTCTime
 getItemUTC' locale path metadata = do
-    let tryField k fmt = M.lookup k metadata >>= parseTime' fmt
+    let tryField k fmt = lookupString k metadata >>= parseTime' fmt
         fn             = takeFileName path
 
     msum $
