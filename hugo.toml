@@ -2,3 +2,24 @@ baseURL = 'https://www.nonsingular.net'
 languageCode = 'en-us'
 title = 'nonsingular'
 theme = 'hugo-texify2'
+
+[author]
+name = "Saeid Al-Wazzan"
+
+[params]
+title = "nonsingular"
+description = ""
+images = []
+footnote = ''
+keywords = []
+enableDuckDuckGoSearchBox = false
+
+[params.sharingbuttons]
+facebook = false
+twitter = false
+email = false
+linkedin = false
+reddit = false
+whatsapp = false
+hackernews = false
+telegram = false

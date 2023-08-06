@@ -1,10 +1,2 @@
-.cabal-sandbox/
-.stack-work/
-cabal.sandbox.config
-_cache/
-_site/
-push
-site
-*.o
-*.hi
-
+public/
+.hugo_build.lock
