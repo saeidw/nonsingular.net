@@ -1,3 +1,4 @@
 baseURL = 'https://www.nonsingular.net'
 languageCode = 'en-us'
 title = 'nonsingular'
+theme = 'hugo-texify2'
